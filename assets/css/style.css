@@ -451,7 +451,12 @@ margin-bottom: var(--mb-0-75);
     color:var(--skin-color);
     margin-bottom:var(--mb-0-75);
 }
-
+.about_title{
+    font-size: var(--small-font-size);
+}
+.about-subtitle{
+    font-size: var(--smaller-font-size);
+}
 /*===== Qualification Section =====*/
 
 
