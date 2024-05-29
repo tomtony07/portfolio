@@ -1,0 +1,486 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*===== Colors =====*/
+    --hue-color:242;
+
+    /* HSL Color Mode */
+    --skin-color: hsl(342, 92%, 46%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    /*===== Font and Typography =====*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*===== Font Weight =====*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*===== Margenes Bottom =====*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*===== Z Index =====*/
+    --z-fixed: 10;
+    --z-modal: 100;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family : var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    width: auto;
+}
+button{
+    cursor: pointer;
+}
+button,
+input{
+    border: none;
+    outline: none;
+}
+/*=============== LAYOUT ===============*/
+.container{
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid{
+    display: grid;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+
+/*=============== SIDEBAR ===============*/
+.sidebar{
+    position: fixed;
+    width: 100px;
+    height: 100vh;
+    background-color: var(--body-color);
+    border-right: 1px solid var(--box-color);
+}
+.nav_logo{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+    text-align: center;
+    margin: auto;
+}
+.nav_logo-text{
+    font-size: 1.125rem;
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    line-height: 40px;
+}
+
+.nav_menu{
+    position: fixed;
+    transform: rotate(-90deg) translate(-100%);
+    transform-origin: left top;
+    width: 100vh;
+}
+
+.menu{
+    display: flex;
+}
+
+.nav_list{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: -2px auto 0 auto;
+}
+.nav_link {
+    float: right;
+    height: 100%;
+    line-height: 100px;
+    padding: 0 1rem;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    position: relative;
+    transition: .4s;
+}
+.btn_share{
+    position:absolute;
+    bottom: 1.8rem;
+    left:0;
+    right:0;
+    text-align: center;
+}
+.social_share{
+    font-size: 1.8rem;
+}
+/* Active Link */
+.nav_link.active-link,.nav_link:hover{
+    color: var(--skin-color);
+}
+.nav_link.active-link::after,.nav_link:hover::after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: var(--skin-color);
+    border-radius: 50%;
+    bottom: 1.8rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/*=============== MAIN ===============*/
+.main {
+    margin-left: 100px;
+}
+
+/*===== Home Section  =====*/
+.home {
+    background: url(../img/home-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the start horizontally (left) */
+    justify-content: flex-start; /* Align items to the start vertically (top) */
+    padding: 2rem; /* Add padding if needed */
+    position: relative;
+}
+
+.home_container {
+    position: relative;
+    width: 100%; /* Adjust width as needed */
+    display: flex;
+    align-items: center; /* Ensure content inside container is centered vertically */
+    justify-content: flex-start; /* Align content inside the container to the start (left) */
+    text-align: left; /* Align text to the left */
+}
+
+.home_social{
+    width: 100%; /* Adjust width as needed */
+    display: flex;
+    align-items: center; /* Ensure content inside container is centered vertically */
+    justify-content: flex-start; /* Align content inside the container to the start (left) */
+    text-align: left;
+    column-gap: 3.5rem;
+}
+
+.home_social-follow{
+    font-weight:var(--font-medium);
+    position: relative;
+}
+
+.home_social-follow::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2px;
+    background-color: var(--text-color);
+    right: -45%;
+    top: 50%;
+}
+
+.home_social-links{
+    display: inline-flex;
+    column-gap: 1rem;
+    font-size: 1.08rem;
+    color:var(--text-color);
+    transition: .4s;
+}
+
+.home_social-links:hover {
+    transform: translateY(.25rem);
+}
+.home_title{
+    font-size:var(--biggest-font-size);
+}
+.home_subtitle{
+font-size: var(--h3-font-size);
+font-weight: var(--font-medium);
+margin-bottom: var(--mb-0-75);
+}
+.home_description{
+    max-width: 450px;
+    margin-bottom: var(--mb-2);
+}
+
+.home_data {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.my_info {
+    display: flex;
+    column-gap: 1.8rem;
+    position: absolute;
+    left: 2rem;
+    bottom: 1.8rem;
+    padding: 1rem;
+    /*background: rgba(0, 0, 0, 0.5); /* Add background for better visibility */
+   /*border-radius: 0.5rem; /* Add border radius if needed */
+}
+
+.info_items {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.info_icon {
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    margin-right: var(--mb-0-75);
+}
+
+.info_title {
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-bold);
+}
+
+.info_subtitle {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+/* Hide home image by default */
+.home_img {
+    display: none;
+}
+
+/*===== Buttons =====*/
+.button {
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    column-gap: .5rem;
+    background: linear-gradient(135deg, var(--skin-color), hsl(342, 92%, 56%)); /* Gradient background */
+    color: var(--title-color);
+    padding: .75rem 1.4rem;
+    border-radius: .5rem; /* Increased border radius for smoother corners */
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    overflow: hidden; /* To ensure pseudo-element effects don't overflow */
+}
+
+/* Hover effect */
+.button:hover {
+    background: linear-gradient(135deg, hsl(342, 92%, 56%), var(--skin-color)); /* Reversed gradient on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Active effect */
+.button:active {
+    transform: translateY(0); /* Reset lift effect when pressed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Original shadow when pressed */
+}
+
+/* Focus effect */
+.button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.5); /* Add custom focus outline */
+}
+
+/* Additional hover effects using pseudo-elements */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.15); /* Light overlay effect */
+    transition: all 0.75s ease;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0;
+    z-index: 0;
+}
+
+.button:hover::before {
+    opacity: 1;
+    width: 400%;
+    height: 400%;
+}
+
+/* Button text enhancement */
+.button span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.button:hover span {
+    color: hsla(244, 94%, 49%, 0.262); /* Change text color slightly on hover */
+}
+
+/* Button icon enhancement */
+.button i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.button:hover i {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+
+/*===== About Section =====*/
+
+
+
+/*===== Qualification Section =====*/
+
+
+/*===== Skills Section =====*/
+
+
+/*===== Work Section =====*/
+
+
+/* Active Item Work */
+
+
+/* Portfolio Popup */
+
+
+/*===== Services Section =====*/
+
+
+/* Active Modal*/
+
+
+/*===== Testimonial Section =====*/
+
+
+/* Swiper Class */
+
+
+/*===== Contact Section =====*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*========== BREAKPOINTS ==========*/
+/* For Large Devices */
+@media screen and (max-width: 1408px) {}
+
+@media screen and (max-width: 1216px) {}
+
+@media screen and (max-width: 1024px) {}
+
+/* For Medium Devices */
+@media screen and (max-width: 768px) {
+    .home_data {
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .my_info {
+        left: 1rem;
+        bottom: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home_data {
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .my_info {
+        left: 0.5rem;
+        bottom: 0.5rem;
+        padding: 0.25rem;
+    }
+}
+
+/* For Small Devices */
+@media screen and (max-width: 350px) {}
