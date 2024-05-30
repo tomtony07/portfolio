@@ -34,10 +34,24 @@
        
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
-
+let mixerportfolio = mixitup('.work_container', {
+    selectors: {
+        target: '.work_card'
+    },
+    animation: {
+        duration: 300
+    }
+});
 
 /*===== Link Active Work =====*/
+const linkWork = document.querySelectorAll('.work_item');
 
+function activeWork() {
+    linkWork.forEach(l => l.classList.remove('active-work')); // Consistent class name
+    this.classList.add('active-work'); // Consistent class name
+}
+
+linkWork.forEach(l => l.addEventListener('click', activeWork));
 
 /*===== Work Popup =====*/
 
