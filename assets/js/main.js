@@ -72,14 +72,71 @@ function portfolioItemDetails(portfolioItem){
 
 }
 /*=============== SERVICES MODAL ===============*/
+const modalViews = document.querySelectorAll('.services_modal'),
+      modalBtns = document.querySelectorAll('.services_button'),
+      modalCloses = document.querySelectorAll('.services_modal-close');
 
+let modal = function(modalClick) {
+    modalViews[modalClick].classList.add('active-modal');
+}
+
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener('click', () => {
+        modal(i);
+    });
+});
+
+modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal');
+        });
+    });
+});
 
 /*=============== SWIPER TESTIMONIAL ===============*/
-
+document.addEventListener("DOMContentLoaded", function () {
+    let swiper = new Swiper(".testimonials_container", {
+      spaceBetween: 24,
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+         },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 48,
+        },
+      },
+    });
+  });
+  
 
 /*=============== INPUT ANIMATION ===============*/
+const inputs =document.querySelectorAll(".input");
 
+function focusFunc(){
+    let parent =this.parentNode;
+    parent.classList.add("focus");
+}
 
+function blurFunc(){
+    let parent =this.parentNode;
+    if(this.value == ""){
+        parent.classList.remove("focus");
+}
+}
+
+inputs.forEach((input) => {
+    input.addEventListener("focus",focusFunc);
+    input.addEventListener("blur",blurFunc);
+}
+)
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 
