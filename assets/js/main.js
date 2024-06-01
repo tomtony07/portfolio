@@ -138,6 +138,26 @@ inputs.forEach((input) => {
 }
 )
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections =documet.querySelectorAll("section[id]");
 
+window.addEventListener("scroll",navhHighlighter)
+
+function navhHighlighter()
+{
+    let scrollY=window.pageYOFFset;
+    sections.forEach(current=> {
+        const sectionHeight=current.offsetHeight;
+        const sectionTop=current.offsetTop - 50;
+        sectionId = current.getattributes("id");
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
+            {
+                document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add("active_link")
+            }
+            else
+            {
+                document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add("active_link")
+            }
+    })
+}
 
 /*=============== SHOW SCROLL UP ===============*/
