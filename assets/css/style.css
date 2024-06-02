@@ -1325,7 +1325,7 @@ textarea.input{
     .skills_container {
         grid-template-columns: 300px;
         row-gap: 3rem;
-        justify-items: center; /* Center items horizontally */
+       /* justify-items: center;  Center items horizontally */
     }
 
     .work_container {
@@ -1336,7 +1336,7 @@ textarea.input{
     .services_container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
-        justify-items: center; /* Center items horizontally */
+       /* justify-items: center; Center items horizontally */
     }
 
     .services_content {
@@ -1348,9 +1348,10 @@ textarea.input{
     }
 
     .contact_container {
+        
         grid-template-columns: 360px;
         row-gap: 3rem;
-        justify-items: center; /* Center items horizontally */
+       /* justify-items: center;  Center items horizontally */
     }
 
     .footer_container {
@@ -1368,11 +1369,11 @@ textarea.input{
     }
 
     .footer_bg {
-        padding: 2rem 0 3rem;
+        padding: 1rem 0 .5rem;
     }
 
     .footer_copy {
-        margin-top: var(--mb-3);
+        margin-top: var(--mb-0-75);
     }
 
     .portfolio_popup-inner {
