@@ -1318,9 +1318,8 @@ textarea.input{
     }
     
     .qualification_container {
-        grid-template-columns: auto; /* Stacks vertically */
-        row-gap: 3rem;
-        justify-items: center; /* Center items horizontally */
+     grid-template-columns: 290px;
+     row-gap: 3rem;
     }
 
     .skills_container {
