@@ -1314,172 +1314,212 @@ textarea.input{
 @media screen and (max-width: 768px) {
     .about_img {
         width: 250px;
+        margin: 0 auto; /* Ensure the image is centered */
     }
     
     .qualification_container {
-        grid-template-columns: auto; /* Adjust to auto to allow containers to stack vertically */
+        grid-template-columns: auto; /* Stacks vertically */
+        row-gap: 3rem;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .skills_container {
+        grid-template-columns: 300px;
+        row-gap: 3rem;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .work_container {
+        grid-template-columns: 330px;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .services_container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .services_content {
+        padding: 3.5rem .5rem 1.25rem 1.5rem;
+    }
+
+    .services_icon {
+        font-size: 1.5rem;
+    }
+
+    .contact_container {
+        grid-template-columns: 360px;
+        row-gap: 3rem;
+        justify-items: center; /* Center items horizontally */
+    }
+
+    .footer_container {
+        grid-template-columns: repeat(2, 1fr);
         row-gap: 3rem;
     }
 
-.skills_container{
-    grid-template-columns: 300px;
-    row-gap: 3rem;
+    .footer_socials {
+        justify-self: start;
+    }
+
+    .footer_links {
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .footer_bg {
+        padding: 2rem 0 3rem;
+    }
+
+    .footer_copy {
+        margin-top: var(--mb-3);
+    }
+
+    .portfolio_popup-inner {
+        width: 420px;
+        padding: 2.8rem 1.5rem 2.5rem;
+        margin: 0 auto; /* Center the popup */
+    }
+
+    .portfolio_popup-content {
+        grid-template-columns: 1fr;
+        row-gap: 1.6rem;
+    }
+
+    .details_title {
+        font-size: var(--normal-font-size);
+    }
+
+    .portfolio_popup-close {
+        top: 0.5rem;
+    }
 }
-.work_container{
-    grid-template-columns: 330px;
-}
-.services_container{
-    grid-template-columns: repeat(2,1fr);
-    gap:1.5rem;
-}
-.services_content{
-    padding: 3.5rem .5rem 1.25rem 1.5rem;
-}
-.services_icon{
-    font-size: 1.5rem;
-     
-}
-.contact_container{
-    grid-template-columns: 360px;
-    row-gap: 3rem;
-}
-.footer_container{
-    grid-template-columns: repeat(2,1fr);
-    row-gap: 3rem;
-   
-}
-.footer_socials{
-    justify-self: start;
-}
-.footer_links{
-    flex-direction: column;
-    row-gap: 1.5rem;
-}
-.footer_bg{
-    padding: 2rem 0 3rem;
-}
-.footer_copy{
-    margin-top: var(--mb-3);
-}
-.portfolio_popup-inner{
-    width: 420px;
-    padding: 2.8rem 1.5rem 2.5rem;
-}
-.portfolio_popup-content{
-    grid-template-columns: 1fr;
-    row-gap: 1.6rem ;
-}
-.details_title{
-    font-size: var(--normal-font-size);
-}
-.portfolio_popup-close{
-    top: 0.5rem;
-}
-}
+
 @media screen and (max-width: 576px) {
-    .nav_toggle{
+    .nav_toggle {
         right: initial;
         left: 1.5rem;
     }
-    .home{
+
+    .home {
         background-image: none;
         height: initial;
         align-items: initial;
         padding: 7rem 0 2rem;
     }
-    .home_container{
-        row-gap: 2rem;
-    }
-    .home_img{
+
+    .home_img {
         display: block;
         width: 250px;
-       justify-self: center;
-       
+        margin: 0 auto;
     }
-    .home_social{
+
+    .home_social {
         left: initial;
         right: -1rem;
         flex-direction: column;
         row-gap: 3.5rem;
     }
-    .home_social-follow{
+
+    .home_social-follow {
         font-size: var(--smaller-font-size);
         transform: rotate(90deg);
     }
-    .home_social-links{
+
+    .home_social-links {
         flex-direction: column;
         row-gap: .25rem;
     }
-    .home_social-link{
+
+    .home_social-link {
         font-size: var(--normal-font-size);
     }
-    .my_info{
+
+    .my_info {
         display: none;
     }
-    .about_info{
-        grid-template-columns: repeat(3,1fr);
+
+    .about_info {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
     }
-    .about_description{
+
+    .about_description {
         padding: 0;
+        text-align: center;
     }
-    .services_modal-content{
+
+    .services_modal-content {
         padding: 4.5rem 1.5rem 2.5rem;
     }
-    .services_modal-description{
+
+    .services_modal-description {
         padding: 0;
     }
+
     .contact_container,
-    .work_container{
+    .work_container {
         grid-template-columns: 300px;
+        justify-items: center;
     }
-    .footer_container{
+
+    .footer_container {
         grid-template-columns: 1fr;
     }
-    .footer_links{
+
+    .footer_links {
         justify-self: flex-start;
     }
-    
 }
 
-
-/* For Small Devices */
 @media screen and (max-width: 350px) {
-    .container{
+    .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
     }
-    .home_img{
-        width: 200px;
+
+    .home_img {
+        width: 800px;
     }
-    .home_title{
+
+    .home_title {
         font-size: var(--h1-font-size);
     }
-    .home_subtitle{
+
+    .home_subtitle {
         font-size: var(--normal-font-size);
     }
-    .about_info{
-        grid-template-columns: repeat(2,1fr);
+
+    .about_info {
+        grid-template-columns: repeat(2, 1fr);
         row-gap: .5rem;
     }
+
     .contact_container,
     .work_container,
     .skills_container,
-    .qualification_container{
+    .qualification_container {
         grid-template-columns: 1fr;
     }
-    .skills_title{
+
+    .skills_title {
         font-size: var(--normal-font-size);
     }
-    .work_item{
+
+    .work_item {
         font-size: var(--small-font-size);
     }
-    .work_filters{
+
+    .work_filters {
         column-gap: .25rem;
     }
-    .services_container{
+
+    .services_container {
         grid-template-columns: max-content;
     }
-    .services_content{
+
+    .services_content {
         padding-right: 3.5rem;
     }
 }
