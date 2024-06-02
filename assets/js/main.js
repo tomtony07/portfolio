@@ -73,19 +73,6 @@ linkWork.forEach(l => l.addEventListener('click', activeWork));
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav_link');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Remove 'active-link' class from all links
-            navLinks.forEach(link => link.classList.remove('active-link'));
-
-            // Add 'active-link' class to the clicked link
-            this.classList.add('active-link');
-        });
-    });
-});
 
 
 
