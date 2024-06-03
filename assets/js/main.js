@@ -1,23 +1,73 @@
 /*=============== SHOW SIDEBAR ===============*/
-const navMenu = document.getElementById('side'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close');
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav_link');
 
-/*===== SIDEBAR SHOW =====*/
-/* Validate If Constant Exists */
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-sidebar');
-    });
-}
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.7
+    };
 
-/*===== SIDEBAR HIDE =====*/
-/* Validate If Constant Exists */
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-sidebar');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
     });
-}
+
+    const navMenu = document.getElementById('side');
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+
+    /*===== SIDEBAR SHOW =====*/
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.add('show-sidebar');
+        });
+    }
+
+    /*===== SIDEBAR HIDE =====*/
+    if (navClose) {
+        navClose.addEventListener('click', () => {
+            navMenu.classList.remove('show-sidebar');
+        });
+    }
+
+    // Highlight the Home button when clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(navLink => navLink.classList.remove('active-link'));
+            link.classList.add('active-link');
+        });
+    });
+
+    // Ensure Home is highlighted on initial load if at the top
+    window.addEventListener('load', () => {
+        if (window.scrollY === 0) {
+            document.querySelector('.nav_link[href="#home"]').classList.add('active-link');
+        }
+    });
+
+    // Ensure Home is highlighted when scrolling back to top
+    window.addEventListener('scroll', () => {
+        if (window.scrollY === 0) {
+            navLinks.forEach(link => link.classList.remove('active-link'));
+            document.querySelector('.nav_link[href="#home"]').classList.add('active-link');
+        }
+    });
+});
+
 
 
 /*===== SIDEBAR HIDDEN =====*/
@@ -141,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 
-/*=============== INPUT ANIMATION ===============*/
+/*=============== INPUT ANIMATION ===============
 const inputs =document.querySelectorAll(".input");
 
 function focusFunc(){
@@ -160,7 +210,7 @@ inputs.forEach((input) => {
     input.addEventListener("focus",focusFunc);
     input.addEventListener("blur",blurFunc);
 }
-)
+)*/
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections =documet.querySelectorAll("section[id]");
 

@@ -238,6 +238,10 @@ input{
     margin: auto;
 }
 
+.nav_link.active-link::after,.nav_link:after {
+    color: var(--skin-color);
+}
+
 /*=============== MAIN ===============*/
 .main {
     margin-left: 100px;
@@ -1411,9 +1415,10 @@ textarea.input{
     }
 
     .home_img {
-        display: none;
+        display: block;
         width: 250px;
         margin: 0 auto;
+        padding: 0.5rem;
 
     }
 
@@ -1425,7 +1430,7 @@ textarea.input{
     }
 
     .home_data {
-        padding-top: 20rem;
+        padding-top: 25rem;
     }
 
     .home_social-follow {
@@ -1449,7 +1454,7 @@ textarea.input{
     }
 
     .about {
-        padding-top: 20rem;
+        padding-top: 25rem;
     }
 
     .about_info {
