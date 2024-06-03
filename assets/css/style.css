@@ -1410,9 +1410,10 @@ textarea.input{
     }
 
     .home_img {
-        display: block;
+        display: none;
         width: 250px;
         margin: 0 auto;
+
     }
 
     .home_social {
@@ -1422,14 +1423,20 @@ textarea.input{
         row-gap: 3.5rem;
     }
 
+    .home_data {
+        padding-top: 20rem;
+    }
+
     .home_social-follow {
         font-size: var(--smaller-font-size);
         transform: rotate(90deg);
+        display: none;
     }
 
     .home_social-links {
         flex-direction: column;
         row-gap: .25rem;
+        display: none;
     }
 
     .home_social-link {
@@ -1438,6 +1445,10 @@ textarea.input{
 
     .my_info {
         display: none;
+    }
+
+    .about {
+        padding-top: 20rem;
     }
 
     .about_info {
