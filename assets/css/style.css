@@ -305,8 +305,12 @@ input{
 .home_social-links:hover {
     transform: translateY(.25rem);
 }
-.home_title{
+.home_title,.home_name{
+    display: inline;
     font-size:var(--biggest-font-size);
+}
+.home_name{
+    color: var(--skin-color);
 }
 .home_subtitle{
 font-size: var(--h3-font-size);
@@ -320,7 +324,7 @@ margin-bottom: var(--mb-0-75);
 
 .home_data {
     position: absolute;
-    left: 2rem;
+    left: auto;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -1408,10 +1412,13 @@ textarea.input{
     }
 
     .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Align children horizontally center */
+        justify-content: center; /* Align children vertically center */
         background-image: none;
         height: initial;
-        align-items: initial;
-        padding: 7rem 0 2rem;
+       
     }
 
     .home_img {
@@ -1431,6 +1438,7 @@ textarea.input{
 
     .home_data {
         padding-top: 25rem;
+        text-align: center;
     }
 
     .home_social-follow {
