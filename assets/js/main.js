@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 /* Validate If Constant Exists */
 
 
+
+
+
+
 /*=============== SKILLS TABS ===============*/
 
 
@@ -235,3 +239,4 @@ function navhHighlighter()
 }
 
 /*=============== SHOW SCROLL UP ===============*/
+
