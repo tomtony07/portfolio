@@ -1418,7 +1418,7 @@ textarea.input{
         justify-content: center; /* Align children vertically center */
         background-image: none;
         height: initial;
-       
+        padding: 7rem 0 2rem;
     }
 
     .home_img {
