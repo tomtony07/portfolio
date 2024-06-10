@@ -328,6 +328,9 @@ margin-bottom: var(--mb-0-75);
     top: 50%;
     transform: translateY(-50%);
 }
+.home_name{
+    display: contents;
+}
 
 .my_info {
     display: flex;
@@ -1418,7 +1421,7 @@ textarea.input{
         justify-content: center; /* Align children vertically center */
         background-image: none;
         height: initial;
-        padding: 7rem 0 2rem;
+        padding: 0;
     }
 
     .home_img {
@@ -1547,4 +1550,19 @@ textarea.input{
     .services_content {
         padding-right: 3.5rem;
     }
+}
+
+/* Typing effect CSS*/ 
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: 0.15em solid rgba(23, 24, 29); }
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid rgba(23, 24, 29);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }

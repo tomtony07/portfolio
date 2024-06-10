@@ -215,6 +215,47 @@ inputs.forEach((input) => {
     input.addEventListener("blur",blurFunc);
 }
 )*/
+
+/*=============== typewriting effect ===============*/
+document.addEventListener("DOMContentLoaded", function() {
+    // Typewriter effect function with a callback
+    function typeWriter(element, text, delay = 100, callback) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, delay);
+            } else if (callback) {
+                setTimeout(callback, delay);  // Call the callback after a delay to make it more visible
+            }
+        }
+        element.innerHTML = '';  // Clear the initial content before starting
+        type();
+    }
+
+    // Apply the typewriter effect to home_title and home_name infinitely
+    function startTypeWriter() {
+
+        const homeTitle = document.querySelector('.home_title');
+        const homeTitleText = homeTitle.getAttribute('data-text');
+        homeTitle.innerHTML='';
+        const homeName = document.querySelector('.home_name');
+        const homeNameText = homeName.getAttribute('data-text');
+        homeName.innerHTML='';
+        typeWriter(homeTitle, homeTitleText, 100, function() {
+            typeWriter(homeName, homeNameText, 100, function() {
+                // Restart the typewriter effect for both elements
+                setTimeout(startTypeWriter, 1000);  // Add a delay before restarting
+            });
+        });
+    }
+
+    // Start the typewriter effect initially
+    startTypeWriter();
+});
+
+
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections =documet.querySelectorAll("section[id]");
 
@@ -239,4 +280,5 @@ function navhHighlighter()
 }
 
 /*=============== SHOW SCROLL UP ===============*/
+
 
