@@ -1319,6 +1319,7 @@ textarea.input{
     .details_title {
         margin-bottom: var(--mb-0-75);
     }
+
 }
 
 
@@ -1469,8 +1470,10 @@ textarea.input{
     }
 
     .about_info {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
+        align-items: stretch; /* Ensure all items stretch to fill the grid cell */
+        gap: 1rem; /* Add some gap between the grid items */
     }
 
     .about_description {
@@ -1485,6 +1488,7 @@ textarea.input{
     .services_modal-description {
         padding: 0;
     }
+    
 
     .contact_container,
     .work_container {
