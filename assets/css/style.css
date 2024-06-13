@@ -249,7 +249,7 @@ input{
 
 /*===== Home Section  =====*/
 .home {
-    background: url(../img/home-bg.jpg);
+   background: url(../img/me2.png);   /*image to change */
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -339,8 +339,8 @@ margin-bottom: var(--mb-0-75);
     left: 2rem;
     bottom: 1.8rem;
     padding: 1rem;
-    /*background: rgba(0, 0, 0, 0.5); /* Add background for better visibility */
-   /*border-radius: 0.5rem; /* Add border radius if needed */
+    background: rgba(88, 86, 86, 0.5); /* Add background for better visibility */
+   border-radius: 0.5rem; /* Add border radius if needed */
 }
 
 .info_items {
